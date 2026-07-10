@@ -7,377 +7,306 @@
 <meta name="description" content="김재은 경력기술서 — AI·데이터 교육사업 PM. 회사별 담당 역할과 수행업무, 일하는 방식, 업무역량을 기술한 문서.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#FBFAF8;
-    --ink:#20242C;
-    --soft:#4A4F5A;
-    --mute:#7A7E88;
-    --line:#E6E3DC;
-    --accent:#2947B8;
-    --accent-deep:#1D338A;
-    --tint:#EFF2FA;
-    --maxw:880px;
-    --serif:"Noto Serif KR",serif;
-    --sans:"Noto Sans KR",system-ui,sans-serif;
+    --paper:#ffffff;--paper-2:#f4f7f4;--ink:#13201a;--ink-soft:#3f4a44;--muted:#76807a;
+    --line:#e4e8e3;--line-strong:#d2dbd4;--accent:#0a7a45;--accent-soft:#e7f3ec;
+    --dark:#0b1f17;--dark-2:#102a20;--dark-line:rgba(255,255,255,.14);
+    --on-dark:#eef3f0;--on-dark-muted:rgba(238,243,240,.6);--accent-bright:#54c98a;
+    --maxw:900px;--pad:clamp(20px,5vw,56px);
+    --sans:"IBM Plex Sans KR",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--sans);
-    font-size:15.5px;
-    line-height:1.75;
-    word-break:keep-all;
-    overflow-wrap:break-word;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.72;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;}
   a{color:inherit;text-decoration:none;}
   ::selection{background:var(--accent);color:#fff;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px);}
-
-  /* ── 문서 내비게이션 ───────────────────────── */
-  .docnav{border-bottom:1px solid var(--line);background:var(--paper);}
-  .docnav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px;}
-  .docnav .who{font-family:var(--serif);font-weight:600;font-size:.95rem;letter-spacing:.02em;}
-  .docnav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;}
-  .docnav li a{
-    display:block;padding:7px 14px;font-size:.85rem;color:var(--mute);
-    border-radius:3px;transition:color .15s,background .15s;
-  }
-  .docnav li a:hover{color:var(--accent);background:var(--tint);}
-  .docnav li a[aria-current="page"]{color:var(--accent-deep);font-weight:700;background:var(--tint);}
-
-  /* ── 문서 표제부 ───────────────────────────── */
-  .head{padding:clamp(44px,8vw,76px) 0 clamp(28px,5vw,40px);}
-  .doc-kind{
-    display:inline-block;font-size:.8rem;letter-spacing:.34em;color:var(--accent);
-    font-weight:700;padding-left:.34em;margin:0 0 18px;
-  }
-  .head h1{
-    font-family:var(--serif);font-weight:700;
-    font-size:clamp(1.9rem,4.6vw,2.75rem);
-    letter-spacing:-.01em;line-height:1.3;margin:0 0 10px;
-  }
-  .head .title-line{font-size:clamp(1rem,2vw,1.15rem);color:var(--soft);margin:0;}
-  .head .title-line b{color:var(--ink);font-weight:700;}
-  .head .intro{margin:22px 0 0;max-width:64ch;color:var(--soft);}
-
-  /* ── 요약표 ───────────────────────────────── */
-  .summary{
-    margin-top:clamp(30px,5vw,44px);
-    border-top:3px double var(--ink);
-    border-bottom:1px solid var(--line);
-    display:grid;grid-template-columns:repeat(3,1fr);
-  }
-  .summary .cell{padding:18px 18px 20px 0;border-right:1px solid var(--line);}
-  .summary .cell + .cell{padding-left:18px;}
-  .summary .cell:last-child{border-right:0;}
-  .summary dt{margin:0 0 8px;font-size:.76rem;color:var(--mute);letter-spacing:.06em;}
-  .summary dd{margin:0;font-family:var(--serif);font-weight:600;font-size:1.06rem;line-height:1.5;color:var(--ink);}
-  .summary dd small{display:block;font-family:var(--sans);font-weight:400;font-size:.78rem;color:var(--mute);margin-top:3px;}
-
-  /* ── 커리어 흐름 ──────────────────────────── */
-  .flow{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-size:.9rem;}
-  .flow .stage{color:var(--soft);}
-  .flow .stage.now{color:var(--accent-deep);font-weight:700;}
-  .flow .arrow{color:var(--mute);font-size:.82rem;}
-
-  /* ── 섹션 공통 ─────────────────────────────── */
-  section{padding:clamp(34px,6vw,56px) 0 0;}
-  .sec-title{
-    display:flex;align-items:baseline;gap:12px;
-    border-top:3px double var(--ink);
-    padding-top:16px;margin:0 0 6px;
-  }
-  .sec-title h2{
-    font-family:var(--serif);font-weight:700;font-size:1.22rem;
-    letter-spacing:.01em;margin:0;
-  }
-  .sec-title .en{font-size:.76rem;color:var(--mute);letter-spacing:.08em;}
-  .sec-note{margin:0 0 24px;font-size:.88rem;color:var(--mute);}
-
-  /* ── 수행 방식 ────────────────────────────── */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line);}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .topbar .mark{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--ink);}
+  .topbar nav{display:flex;align-items:center;gap:4px;font-family:var(--mono);font-size:.74rem;}
+  .topbar nav a{padding:6px 12px;color:var(--muted);border-radius:3px;letter-spacing:.04em;transition:color .18s,background .18s;}
+  .topbar nav a:hover{color:var(--accent);background:var(--accent-soft);}
+  .topbar nav a[aria-current="page"]{color:var(--accent);font-weight:600;background:var(--accent-soft);}
+  .head{background:var(--dark);color:var(--on-dark);padding:clamp(48px,8vw,88px) 0 clamp(40px,6vw,64px);}
+  .head .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-bright);margin:0 0 20px;}
+  .head h1{font-weight:600;font-size:clamp(2.2rem,6vw,3.4rem);letter-spacing:-.02em;line-height:1.05;margin:0 0 14px;color:#fff;}
+  .head .title-line{font-size:clamp(1rem,2vw,1.16rem);color:var(--on-dark);margin:0;}
+  .head .title-line b{color:var(--accent-bright);font-weight:600;}
+  .head .title-line .mail{color:var(--on-dark-muted);font-family:var(--mono);font-size:.9rem;transition:color .18s;}
+  .head .title-line .mail:hover{color:var(--accent-bright);}
+  .head .intro{margin:22px 0 0;max-width:66ch;color:var(--on-dark-muted);font-size:1rem;line-height:1.75;}
+  .dsummary{margin-top:clamp(34px,5vw,52px);border-top:1px solid var(--dark-line);display:grid;grid-template-columns:repeat(3,1fr);}
+  .dsummary .cell{padding:24px 0 6px;border-right:1px solid var(--dark-line);}
+  .dsummary .cell:last-child{border-right:0;padding-left:22px;}
+  .dsummary .cell:nth-child(2){padding-left:22px;}
+  .dsummary dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted);margin:0 0 10px;}
+  .dsummary dd{margin:0;font-family:var(--mono);font-weight:500;font-size:clamp(1.15rem,2.4vw,1.6rem);letter-spacing:-.01em;color:var(--accent-bright);line-height:1.15;}
+  .dsummary dd small{display:block;font-family:var(--sans);font-weight:400;font-size:.78rem;color:var(--on-dark-muted);margin-top:7px;letter-spacing:0;line-height:1.5;}
+  .flow{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-family:var(--mono);font-size:.82rem;}
+  .flow .stage{color:var(--on-dark-muted);}
+  .flow .stage.now{color:var(--accent-bright);font-weight:500;}
+  .flow .arrow{color:var(--dark-line);}
+  main section{padding:clamp(38px,6vw,58px) 0 0;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;border-top:2px solid var(--ink);padding-top:15px;margin:0 0 6px;}
+  .sec-head h2{font-weight:600;font-size:1.3rem;letter-spacing:-.01em;margin:0;}
+  .sec-head .en{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+  .sec-note{margin:0 0 24px;font-size:.88rem;color:var(--muted);}
   .method{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
   .method .step{background:var(--paper);padding:20px 20px 22px;}
-  .method h3{margin:0 0 8px;font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--accent-deep);}
-  .method p{margin:0;font-size:.91rem;color:var(--soft);}
-
-  /* ── 회사별 상세 ──────────────────────────── */
-  .firm{padding:clamp(26px,4vw,36px) 0;border-bottom:1px solid var(--line);}
+  .method h3{margin:0 0 8px;font-size:1rem;font-weight:600;color:var(--accent);letter-spacing:-.01em;}
+  .method p{margin:0;font-size:.91rem;color:var(--ink-soft);}
+  .firm{padding:clamp(26px,4vw,38px) 0;border-bottom:1px solid var(--line);}
   .firm:last-of-type{border-bottom:0;}
   .firm-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:0 0 4px;}
-  .firm-head h3{font-family:var(--serif);font-weight:700;font-size:1.28rem;margin:0;}
-  .firm-head .term{font-size:.86rem;color:var(--mute);}
-  .firm .pos{margin:0 0 14px;font-size:.88rem;color:var(--accent-deep);font-weight:700;}
-  .firm .role{
-    margin:0 0 18px;padding:14px 18px;background:var(--tint);
-    font-size:.94rem;color:var(--soft);border-radius:3px;
-  }
-  .firm .role b{color:var(--ink);}
-  .duty-label{margin:0 0 10px;font-size:.8rem;font-weight:700;color:var(--mute);letter-spacing:.06em;}
+  .firm-head h3{font-weight:600;font-size:1.32rem;margin:0;letter-spacing:-.01em;}
+  .firm-head .term{font-family:var(--mono);font-size:.8rem;color:var(--muted);}
+  .firm .pos{margin:0 0 14px;font-size:.88rem;color:var(--accent);font-weight:600;}
+  .firm .role{margin:0 0 18px;padding:15px 18px;background:var(--accent-soft);font-size:.94rem;color:var(--ink-soft);border-radius:3px;border-left:2px solid var(--accent);}
+  .firm .role b{color:var(--ink);font-weight:600;}
+  .duty-label{margin:0 0 10px;font-family:var(--mono);font-size:.7rem;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;}
   .duties{list-style:none;margin:0;padding:0;}
-  .duties li{
-    position:relative;padding:8px 0 8px 16px;
-    border-bottom:1px solid var(--line);
-    font-size:.93rem;color:var(--soft);
-  }
+  .duties li{position:relative;padding:9px 0 9px 16px;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--ink-soft);line-height:1.55;}
   .duties li:first-child{border-top:1px solid var(--line);}
-  .duties li::before{
-    content:"";position:absolute;left:2px;top:17px;
-    width:5px;height:5px;background:var(--accent);
-  }
-  .firm .ref{
-    margin:16px 0 0;font-size:.88rem;color:var(--soft);
-  }
-  .firm .ref a{color:var(--accent);border-bottom:1px solid transparent;transition:border-color .15s;}
+  .duties li::before{content:"";position:absolute;left:2px;top:17px;width:5px;height:5px;border-radius:50%;background:var(--accent);}
+  .duties li .m{color:var(--accent);font-weight:600;}
+  .firm .ref{margin:16px 0 0;font-size:.88rem;color:var(--ink-soft);}
+  .firm .ref a{color:var(--accent);font-weight:500;border-bottom:1px solid transparent;transition:border-color .15s;}
   .firm .ref a:hover{border-color:var(--accent);}
-
-  /* ── 업무역량 요약 ────────────────────────── */
   .caps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
   .cap{background:var(--paper);padding:20px 20px 22px;}
-  .cap h3{margin:0 0 8px;font-family:var(--serif);font-size:1rem;font-weight:600;}
-  .cap p{margin:0;font-size:.9rem;color:var(--soft);}
-
-  /* ── 관련 문서 ────────────────────────────── */
-  .related{margin-top:clamp(40px,7vw,64px);border-top:3px double var(--ink);padding:26px 0 60px;}
-  .related p{margin:0 0 16px;font-size:.92rem;color:var(--soft);}
-  .rel-links{display:flex;flex-wrap:wrap;gap:10px;}
-  .rel-links a{
-    display:inline-block;padding:11px 20px;font-size:.88rem;font-weight:500;
-    border:1px solid var(--accent);color:var(--accent-deep);border-radius:3px;
-    transition:background .15s,color .15s;
-  }
-  .rel-links a:hover{background:var(--accent);color:#fff;}
-  .rel-links a.mail{border-color:var(--line);color:var(--soft);}
-  .rel-links a.mail:hover{background:var(--ink);border-color:var(--ink);color:#fff;}
-  .colophon{margin-top:34px;font-size:.78rem;color:var(--mute);}
-
-  /* ── 반응형 ───────────────────────────────── */
+  .cap h3{margin:0 0 8px;font-size:1rem;font-weight:600;letter-spacing:-.01em;}
+  .cap p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+  .foot{background:var(--dark);color:var(--on-dark);margin-top:clamp(48px,8vw,80px);padding:44px 0 60px;}
+  .foot .lead{margin:0 0 22px;font-size:.94rem;color:var(--on-dark-muted);max-width:60ch;}
+  .foot .rel-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;}
+  .foot .rel-links a{display:inline-block;padding:11px 20px;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--on-dark);border:1px solid var(--dark-line);border-radius:2px;transition:background .18s,border-color .18s,color .18s;}
+  .foot .rel-links a:hover{background:var(--accent-bright);border-color:var(--accent-bright);color:var(--dark);}
+  .foot .rel-links a.mail{color:var(--on-dark-muted);}
+  .foot .rel-links a.mail:hover{color:var(--dark);}
+  .foot .colophon{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--on-dark-muted);line-height:1.8;}
   @media (max-width:720px){
-    .summary{grid-template-columns:1fr;}
-    .summary .cell{padding-left:0;padding-right:0;border-right:0;border-bottom:1px solid var(--line);}
-    .summary .cell + .cell{padding-left:0;}
-    .summary .cell:last-child{border-bottom:0;}
+    .dsummary{grid-template-columns:1fr;}
+    .dsummary .cell{border-right:0;border-bottom:1px solid var(--dark-line);padding-left:0 !important;}
+    .dsummary .cell:last-child{border-bottom:0;}
     .method{grid-template-columns:1fr;}
     .caps{grid-template-columns:1fr;}
+    .topbar .mark{display:none;}
   }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    *{transition:none !important;}
-  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
-
-  /* ── 인쇄 ─────────────────────────────────── */
   @media print{
-    .docnav,.related .rel-links{display:none;}
-    body{background:#fff;font-size:12.5px;}
-    .summary,.sec-title,.related{border-color:#000;}
-    a{color:#000;}
-    section{padding-top:26px;}
+    .topbar,.foot .rel-links{display:none;}
+    body{font-size:12.5px;}
+    .head{background:#fff;color:#000;padding:20px 0;}
+    .head h1,.head .title-line b{color:#000;}
+    .head .eyebrow,.head .intro,.head .title-line,.head .title-line .mail,.flow .stage,.flow .stage.now{color:#333;}
+    .dsummary,.dsummary .cell{border-color:#bbb;}
+    .dsummary dt,.dsummary dd,.dsummary dd small{color:#000;}
+    .foot{background:#fff;color:#000;}
+    .foot .lead,.foot .colophon{color:#333;}
+    main section{padding-top:24px;}
     .firm{page-break-inside:avoid;}
   }
 </style>
 </head>
 <body>
 
-<nav class="docnav" aria-label="문서 이동">
+<header class="topbar">
   <div class="wrap">
-    <span class="who">김재은</span>
-    <ul>
-      <li><a href="/resume/">이력서</a></li>
-      <li><a href="/experience/" aria-current="page">경력기술서</a></li>
-      <li><a href="/portfolio/">포트폴리오</a></li>
-    </ul>
+    <span class="mark">김재은</span>
+    <nav aria-label="문서 이동">
+      <a href="/resume/">이력서</a>
+      <a href="/experience/" aria-current="page">경력기술서</a>
+      <a href="/portfolio/">포트폴리오</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main class="wrap">
-
-  <!-- 표제부 -->
+<main>
   <header class="head">
-    <span class="doc-kind">경 력 기 술 서</span>
-    <h1>김재은</h1>
-    <p class="title-line"><b>AI·데이터 교육사업 PM</b> · jekim.lead@gmail.com</p>
-    <p class="intro">회사별로 맡았던 역할과 실제 수행업무를 기술한 문서입니다. 경력의 전체 흐름은 이력서에서, 사업별 성과 기록은 포트폴리오에서 확인할 수 있습니다.</p>
-
-    <dl class="summary">
-      <div class="cell"><dt>총 경력</dt><dd>14년 7개월</dd></div>
-      <div class="cell"><dt>AI·데이터 교육사업</dt><dd>3년 10개월<small>B2G·B2B 기획·운영 PM</small></dd></div>
-      <div class="cell"><dt>최근 직책</dt><dd>수석연구원 · 팀장<small>㈜씨에스리 교육사업팀 — 2023.03 팀 발족부터 팀장</small></dd></div>
-    </dl>
-
-    <div class="flow" aria-label="경력 흐름">
-      <span class="stage">원격 교육콘텐츠 제작·운영</span>
-      <span class="arrow">→</span>
-      <span class="stage">대학 홍보·교육행정</span>
-      <span class="arrow">→</span>
-      <span class="stage now">AI·데이터·DX 교육사업 PM</span>
+    <div class="wrap">
+      <p class="eyebrow">Career Description · 경력기술서</p>
+      <h1>김재은</h1>
+      <p class="title-line"><b>AI·데이터 교육사업 PM</b> · <a class="mail" href="mailto:jekim.lead@gmail.com">jekim.lead@gmail.com</a></p>
+      <p class="intro">회사별로 맡았던 역할과 실제 수행업무를 기술한 문서입니다. 경력의 전체 흐름은 이력서에서, 사업별 성과 기록은 포트폴리오에서 확인할 수 있습니다.</p>
+      <dl class="dsummary">
+        <div class="cell"><dt>총 경력</dt><dd>14년 7개월</dd></div>
+        <div class="cell"><dt>AI·데이터 교육사업</dt><dd>3년 10개월<small>B2G·B2B 기획·운영 PM</small></dd></div>
+        <div class="cell"><dt>최근 직책</dt><dd>수석연구원 · 팀장<small>㈜씨에스리 교육사업팀 · 2023.03 팀 발족부터 팀장</small></dd></div>
+      </dl>
+      <div class="flow" aria-label="경력 흐름">
+        <span class="stage">원격 교육콘텐츠 제작·운영</span>
+        <span class="arrow">→</span>
+        <span class="stage">대학 홍보·교육행정</span>
+        <span class="arrow">→</span>
+        <span class="stage now">AI·데이터·DX 교육사업 PM</span>
+      </div>
     </div>
   </header>
 
-  <!-- 수행 방식 -->
-  <section id="method">
-    <div class="sec-title"><h2>교육사업 수행 방식</h2><span class="en">Work Method</span></div>
-    <p class="sec-note">공공기관·기업 AI·데이터 교육사업을 제안 검토부터 결과보고까지 관리하는 수행 프로세스입니다.</p>
-    <div class="method">
-      <div class="step">
-        <h3>요구사항을 교육사업 구조로 전환</h3>
-        <p>공고문, RFP, 기관 요구사항을 검토해 교육목표·과정구성·운영전략·산출물 계획으로 정리합니다.</p>
+  <div class="wrap">
+    <section id="method">
+      <div class="sec-head"><h2>교육사업 수행 방식</h2><span class="en">Work Method</span></div>
+      <p class="sec-note">공공기관·기업 AI·데이터 교육사업을 제안 검토부터 결과보고까지 관리하는 수행 프로세스입니다.</p>
+      <div class="method">
+        <div class="step">
+          <h3>요구사항을 교육사업 구조로 전환</h3>
+          <p>공고문, RFP, 기관 요구사항을 검토해 교육목표·과정구성·운영전략·산출물 계획으로 정리합니다.</p>
+        </div>
+        <div class="step">
+          <h3>기술 주제를 실무형 과정으로 구성</h3>
+          <p>AI·데이터·DX 주제를 교육대상자의 수준과 업무맥락에 맞춰 실습형·프로젝트형 과정으로 전환합니다.</p>
+        </div>
+        <div class="step">
+          <h3>운영 리스크를 줄이는 실행체계 관리</h3>
+          <p>일정, 강사·멘토 역할, 교육생 안내, 실습환경, 자료 배포, 산출물 제출 흐름을 사전에 정리해 운영 안정성을 확보합니다.</p>
+        </div>
+        <div class="step">
+          <h3>결과보고까지 이어지는 성과관리</h3>
+          <p>출결, 수료, 만족도, 역량평가, 프로젝트 결과, 운영실적을 취합해 발주기관 제출용 결과보고 자료로 완결합니다.</p>
+        </div>
       </div>
-      <div class="step">
-        <h3>기술 주제를 실무형 과정으로 구성</h3>
-        <p>AI·데이터·DX 주제를 교육대상자의 수준과 업무맥락에 맞춰 실습형·프로젝트형 과정으로 전환합니다.</p>
-      </div>
-      <div class="step">
-        <h3>운영 리스크를 줄이는 실행체계 관리</h3>
-        <p>일정, 강사·멘토 역할, 교육생 안내, 실습환경, 자료 배포, 산출물 제출 흐름을 사전에 정리해 운영 안정성을 확보합니다.</p>
-      </div>
-      <div class="step">
-        <h3>결과보고까지 이어지는 성과관리</h3>
-        <p>출결, 수료, 만족도, 역량평가, 프로젝트 결과, 운영실적을 취합해 발주기관 제출용 결과보고 자료로 완결합니다.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 회사별 상세 -->
-  <section id="detail">
-    <div class="sec-title"><h2>회사별 상세 경력기술</h2><span class="en">Work Experience Detail</span></div>
-    <p class="sec-note">최근 경력부터 기재했습니다.</p>
+    <section id="detail">
+      <div class="sec-head"><h2>회사별 상세 경력기술</h2><span class="en">Work Experience Detail</span></div>
+      <p class="sec-note">최근 경력부터 기재했습니다.</p>
 
-    <article class="firm">
-      <div class="firm-head"><h3>㈜씨에스리</h3><span class="term">2022.04 – 2026.01 · 3년 10개월</span></div>
-      <p class="pos">L&amp;D센터 교육사업팀 · 수석연구원 / 팀장</p>
-      <p class="role"><b>B2G/B2B AI·데이터·DX 교육사업 기획·운영 PM.</b> 공공기관·기업 대상 교육사업에서 제안, 과정기획, 운영관리, 강사·멘토·교육생 조율, 성과관리, 결과보고를 담당했습니다. 2023.03 신설 교육사업 조직(TF)의 팀장을 맡아 팀원 채용부터 팀 구성을 주도했고, 재직 종료 시까지 팀 운영과 사업 수행을 병행했습니다.</p>
-      <p class="duty-label">주요 수행업무</p>
-      <ul class="duties">
-        <li>나라장터 및 기관 공고 기반 신규 교육사업 기회 발굴</li>
-        <li>발주기관 요구사항 분석 및 교육과정·운영전략 구성</li>
-        <li>제안서 작성 및 기술 분야 전문가 의견 반영</li>
-        <li>제안 PT 및 기술협상 대응 지원</li>
-        <li>교육과정 기획 및 커리큘럼 구성</li>
-        <li>강사·멘토 섭외, 일정 조율, 역할 관리</li>
-        <li>교육생 모집·선정·안내·출결·수료 관리</li>
-        <li>온·오프라인 교육 운영 및 실습환경 점검</li>
-        <li>프로젝트형 교육 운영, 멘토링, 중간점검, 성과발표 관리</li>
-        <li>만족도·역량평가·프로젝트 결과·운영실적 취합</li>
-        <li>주간·월간·완료·결과보고 등 발주기관 제출자료 작성</li>
-        <li>교육 안내자료, 홍보자료, 운영 산출물, 행정문서 관리</li>
-      </ul>
-      <p class="duty-label" style="margin-top:22px;">팀 구성·운영</p>
-      <ul class="duties">
-        <li>2023.03 교육사업기획운영팀(TF) 발족 — 팀장으로서 팀원 채용부터 팀 구성 시작</li>
-        <li>2023.07 팀 정식 발령, 2024.01 교육사업팀으로 개편 후 재직 종료 시까지 팀 운영</li>
-        <li>단계적 채용으로 정규 팀원 6인 + 팀장 구조 완성, 재직기간 중 정규 팀원 퇴사 없음</li>
-        <li>팀 매출 KPI 수립·관리 및 팀원 업무 배분·육성</li>
-        <li>사업별 계약직 인력 3~4인 채용·관리</li>
-      </ul>
-      <p class="ref">대표 수행사업 — 경찰청, 한국철도공사, 한국재정정보원, 한국환경공단, KT, NIPA 산업전문인력 AI역량강화 사업. 사업별 성과와 산출물은 <a href="/portfolio/">포트폴리오</a>에서 확인할 수 있습니다.</p>
-    </article>
+      <article class="firm">
+        <div class="firm-head"><h3>㈜씨에스리</h3><span class="term">2022.04 – 2026.01 · 3년 10개월</span></div>
+        <p class="pos">L&amp;D센터 교육사업팀 · 수석연구원 / 팀장</p>
+        <p class="role"><b>B2G/B2B AI·데이터·DX 교육사업 기획·운영 PM.</b> 공공기관·기업 대상 교육사업에서 제안, 과정기획, 운영관리, 강사·멘토·교육생 조율, 성과관리, 결과보고를 담당했습니다. 2023.03 신설 교육사업 조직(TF)의 팀장을 맡아 팀원 채용부터 팀 구성을 주도했고, 재직 종료 시까지 팀 운영과 사업 수행을 병행했습니다.</p>
+        <p class="duty-label">주요 수행업무</p>
+        <ul class="duties">
+          <li>나라장터 및 기관 공고 기반 신규 교육사업 기회 발굴</li>
+          <li>발주기관 요구사항 분석 및 교육과정·운영전략 구성</li>
+          <li>제안서 작성 및 기술 분야 전문가 의견 반영</li>
+          <li>제안 PT 및 기술협상 대응 지원</li>
+          <li>교육과정 기획 및 커리큘럼 구성</li>
+          <li>강사·멘토 섭외, 일정 조율, 역할 관리</li>
+          <li>교육생 모집·선정·안내·출결·수료 관리</li>
+          <li>온·오프라인 교육 운영 및 실습환경 점검</li>
+          <li>프로젝트형 교육 운영, 멘토링, 중간점검, 성과발표 관리</li>
+          <li>만족도·역량평가·프로젝트 결과·운영실적 취합</li>
+          <li>주간·월간·완료·결과보고 등 발주기관 제출자료 작성</li>
+          <li>교육 안내자료, 홍보자료, 운영 산출물, 행정문서 관리</li>
+        </ul>
+        <p class="duty-label" style="margin-top:22px;">팀 구성·운영</p>
+        <ul class="duties">
+          <li><span class="m">2023.03</span> 교육사업기획운영팀(TF) 발족 — 팀장으로서 팀원 채용부터 팀 구성 시작</li>
+          <li><span class="m">2023.07</span> 팀 정식 발령, <span class="m">2024.01</span> 교육사업팀으로 개편 후 재직 종료 시까지 팀 운영</li>
+          <li>단계적 채용으로 정규 팀원 6인 + 팀장 구조 완성, 재직기간 중 정규 팀원 퇴사 없음</li>
+          <li>팀 매출 KPI 수립·관리 및 팀원 업무 배분·육성</li>
+          <li>사업별 계약직 인력 3~4인 채용·관리</li>
+        </ul>
+        <p class="ref">대표 수행사업 — 경찰청, 한국철도공사, 한국재정정보원, 한국환경공단, KT, NIPA 산업전문인력 AI역량강화 사업. 사업별 성과와 산출물은 <a href="/portfolio/" target="_blank" rel="noopener">포트폴리오 ↗</a> 에서 확인할 수 있습니다.</p>
+      </article>
 
-    <article class="firm">
-      <div class="firm-head"><h3>서강대학교</h3><span class="term">2020.10 – 2022.04</span></div>
-      <p class="pos">발전홍보팀 · 사원 / 팀원</p>
-      <p class="role"><b>대학 홍보·콘텐츠 운영 및 행정 지원.</b> 대학 웹진, SNS, 홍보자료, 학생기자단, 학내 행사 운영을 중심으로 홍보 콘텐츠와 행정 지원 업무를 수행했습니다.</p>
-      <p class="duty-label">주요 수행업무</p>
-      <ul class="duties">
-        <li>대학 웹진 콘텐츠 기획 및 원고 관리</li>
-        <li>SNS 홍보 콘텐츠 운영</li>
-        <li>학생기자단 관리</li>
-        <li>학내 행사 운영 지원</li>
-        <li>홍보자료 제작 및 부서 커뮤니케이션</li>
-      </ul>
-    </article>
+      <article class="firm">
+        <div class="firm-head"><h3>서강대학교</h3><span class="term">2020.10 – 2022.04</span></div>
+        <p class="pos">발전홍보팀 · 사원 / 팀원</p>
+        <p class="role"><b>대학 홍보·콘텐츠 운영 및 행정 지원.</b> 대학 웹진, SNS, 홍보자료, 학생기자단, 학내 행사 운영을 중심으로 홍보 콘텐츠와 행정 지원 업무를 수행했습니다.</p>
+        <p class="duty-label">주요 수행업무</p>
+        <ul class="duties">
+          <li>대학 웹진 콘텐츠 기획 및 원고 관리</li>
+          <li>SNS 홍보 콘텐츠 운영</li>
+          <li>학생기자단 관리</li>
+          <li>학내 행사 운영 지원</li>
+          <li>홍보자료 제작 및 부서 커뮤니케이션</li>
+        </ul>
+      </article>
 
-    <article class="firm">
-      <div class="firm-head"><h3>세종사이버대학교</h3><span class="term">2018.04 – 2020.04</span></div>
-      <p class="pos">콘텐츠개발팀 · 사원 / 팀원</p>
-      <p class="role"><b>온라인 학습콘텐츠 제작·운영 및 유지관리.</b> 학기별 온라인 학습콘텐츠 제작과 유지보수 과정의 운영·검토·수정 업무를 수행하고, 제작 리소스와 관련 문서를 관리했습니다.</p>
-      <p class="duty-label">주요 수행업무</p>
-      <ul class="duties">
-        <li>학기별 학습콘텐츠 제작</li>
-        <li>유지보수 과정 운영·관리·검토·수정</li>
-        <li>콘텐츠 제작 리소스 관리</li>
-        <li>콘텐츠 관련 문서 관리</li>
-      </ul>
-    </article>
+      <article class="firm">
+        <div class="firm-head"><h3>세종사이버대학교</h3><span class="term">2018.04 – 2020.04</span></div>
+        <p class="pos">콘텐츠개발팀 · 사원 / 팀원</p>
+        <p class="role"><b>온라인 학습콘텐츠 제작·운영 및 유지관리.</b> 학기별 온라인 학습콘텐츠 제작과 유지보수 과정의 운영·검토·수정 업무를 수행하고, 제작 리소스와 관련 문서를 관리했습니다.</p>
+        <p class="duty-label">주요 수행업무</p>
+        <ul class="duties">
+          <li>학기별 학습콘텐츠 제작</li>
+          <li>유지보수 과정 운영·관리·검토·수정</li>
+          <li>콘텐츠 제작 리소스 관리</li>
+          <li>콘텐츠 관련 문서 관리</li>
+        </ul>
+      </article>
 
-    <article class="firm">
-      <div class="firm-head"><h3>고려사이버대학교</h3><span class="term">2012.03 – 2014.03 / 2016.04 – 2018.04</span></div>
-      <p class="pos">콘텐츠개발팀·연구개발팀 · 사원 / 팀원</p>
-      <p class="role"><b>원격 교육콘텐츠 제작·운영 및 품질관리.</b> 원격 교육콘텐츠 신규 제작과 학기별 콘텐츠 기획·제작을 수행하고, 기개발 과정의 보수·학기 운영·품질 검수·산출물 관리를 담당했습니다.</p>
-      <p class="duty-label">주요 수행업무</p>
-      <ul class="duties">
-        <li>원격 교육콘텐츠 신규 제작</li>
-        <li>학기별 신규 교육콘텐츠 기획 및 제작</li>
-        <li>기개발 과정의 콘텐츠 보수, 학기 운영 및 관리</li>
-        <li>교육콘텐츠 제작 리소스 및 산출물 관리</li>
-        <li>콘텐츠 오류 확인, 수정사항 반영 및 품질 검수</li>
-        <li>콘텐츠 운영결과 보고서 및 검수 결과 문서 작성</li>
-      </ul>
-    </article>
+      <article class="firm">
+        <div class="firm-head"><h3>고려사이버대학교</h3><span class="term">2012.03 – 2014.03 / 2016.04 – 2018.04</span></div>
+        <p class="pos">콘텐츠개발팀·연구개발팀 · 사원 / 팀원</p>
+        <p class="role"><b>원격 교육콘텐츠 제작·운영 및 품질관리.</b> 원격 교육콘텐츠 신규 제작과 학기별 콘텐츠 기획·제작을 수행하고, 기개발 과정의 보수·학기 운영·품질 검수·산출물 관리를 담당했습니다.</p>
+        <p class="duty-label">주요 수행업무</p>
+        <ul class="duties">
+          <li>원격 교육콘텐츠 신규 제작</li>
+          <li>학기별 신규 교육콘텐츠 기획 및 제작</li>
+          <li>기개발 과정의 콘텐츠 보수, 학기 운영 및 관리</li>
+          <li>교육콘텐츠 제작 리소스 및 산출물 관리</li>
+          <li>콘텐츠 오류 확인, 수정사항 반영 및 품질 검수</li>
+          <li>콘텐츠 운영결과 보고서 및 검수 결과 문서 작성</li>
+        </ul>
+      </article>
 
-    <article class="firm">
-      <div class="firm-head"><h3>서울디지털대학교</h3><span class="term">2009.03 – 2010.03 / 2014.03 – 2016.03</span></div>
-      <p class="pos">디지털교육연구소·디자인개발팀 · 사원 / 팀원</p>
-      <p class="role"><b>원격 교육콘텐츠 제작·운영 및 콘텐츠 관리.</b> 원격 교육콘텐츠 신규 제작과 기존 과정 운영을 수행하고, 강의 제작 리소스 관리, 학기별 운영 체계화, 품질 검수, 운영결과 문서 작성과 SNS 콘텐츠 기획·운영을 담당했습니다.</p>
-      <p class="duty-label">주요 수행업무</p>
-      <ul class="duties">
-        <li>원격 교육콘텐츠 신규 제작 및 기존 과정 콘텐츠 운영</li>
-        <li>온라인 강의 콘텐츠 제작 리소스 관리 및 학기별 운영 체계화</li>
-        <li>콘텐츠 오류 확인, 수정사항 반영 및 품질 검수</li>
-        <li>콘텐츠 운영결과 보고서 및 검수 결과 문서 작성</li>
-        <li>SNS 콘텐츠 기획 및 운영</li>
-      </ul>
-    </article>
-  </section>
+      <article class="firm">
+        <div class="firm-head"><h3>서울디지털대학교</h3><span class="term">2009.03 – 2010.03 / 2014.03 – 2016.03</span></div>
+        <p class="pos">디지털교육연구소·디자인개발팀 · 사원 / 팀원</p>
+        <p class="role"><b>원격 교육콘텐츠 제작·운영 및 콘텐츠 관리.</b> 원격 교육콘텐츠 신규 제작과 기존 과정 운영을 수행하고, 강의 제작 리소스 관리, 학기별 운영 체계화, 품질 검수, 운영결과 문서 작성과 SNS 콘텐츠 기획·운영을 담당했습니다.</p>
+        <p class="duty-label">주요 수행업무</p>
+        <ul class="duties">
+          <li>원격 교육콘텐츠 신규 제작 및 기존 과정 콘텐츠 운영</li>
+          <li>온라인 강의 콘텐츠 제작 리소스 관리 및 학기별 운영 체계화</li>
+          <li>콘텐츠 오류 확인, 수정사항 반영 및 품질 검수</li>
+          <li>콘텐츠 운영결과 보고서 및 검수 결과 문서 작성</li>
+          <li>SNS 콘텐츠 기획 및 운영</li>
+        </ul>
+      </article>
+    </section>
 
-  <!-- 업무역량 요약 -->
-  <section id="caps">
-    <div class="sec-title"><h2>업무역량 요약</h2><span class="en">Capability Summary</span></div>
-    <p class="sec-note">전체 경력에서 확인되는 핵심 업무역량입니다.</p>
-    <div class="caps">
-      <div class="cap">
-        <h3>교육사업 제안·기획</h3>
-        <p>공고 탐색, 요구사항 분석, 교육과정 구성, 운영전략 수립, 제안서 작성 경험.</p>
+    <section id="caps">
+      <div class="sec-head"><h2>업무역량 요약</h2><span class="en">Capability Summary</span></div>
+      <p class="sec-note">전체 경력에서 확인되는 핵심 업무역량입니다.</p>
+      <div class="caps">
+        <div class="cap">
+          <h3>교육사업 제안·기획</h3>
+          <p>공고 탐색, 요구사항 분석, 교육과정 구성, 운영전략 수립, 제안서 작성 경험.</p>
+        </div>
+        <div class="cap">
+          <h3>교육사업 운영 PM</h3>
+          <p>강사, 멘토, 교육생, 발주기관, 협력기관 커뮤니케이션과 일정·운영·산출물 관리 경험.</p>
+        </div>
+        <div class="cap">
+          <h3>성과관리·결과보고</h3>
+          <p>출결, 수료, 만족도, 역량평가, 운영실적, 프로젝트 결과 취합 및 결과보고 자료 작성 경험.</p>
+        </div>
+        <div class="cap">
+          <h3>팀 구성·운영</h3>
+          <p>신설 조직(TF)의 팀장으로 팀원 채용, 매출 KPI 관리, 업무 배분·육성을 수행한 경험.</p>
+        </div>
+        <div class="cap">
+          <h3>온라인 교육콘텐츠 제작·운영</h3>
+          <p>원격 교육콘텐츠 신규 제작, 학기별 콘텐츠 제작, 기존 과정 운영, 유지보수, 리소스 관리 경험.</p>
+        </div>
+        <div class="cap">
+          <h3>콘텐츠 품질관리·문서화</h3>
+          <p>콘텐츠 오류 확인, 수정사항 반영, 품질 검수, 운영결과 보고서 및 검수 결과 문서 작성 경험.</p>
+        </div>
       </div>
-      <div class="cap">
-        <h3>교육사업 운영 PM</h3>
-        <p>강사, 멘토, 교육생, 발주기관, 협력기관 커뮤니케이션과 일정·운영·산출물 관리 경험.</p>
-      </div>
-      <div class="cap">
-        <h3>성과관리·결과보고</h3>
-        <p>출결, 수료, 만족도, 역량평가, 운영실적, 프로젝트 결과 취합 및 결과보고 자료 작성 경험.</p>
-      </div>
-      <div class="cap">
-        <h3>온라인 교육콘텐츠 제작·운영</h3>
-        <p>원격 교육콘텐츠 신규 제작, 학기별 콘텐츠 제작, 기존 과정 운영, 유지보수, 리소스 관리 경험.</p>
-      </div>
-      <div class="cap">
-        <h3>콘텐츠 품질관리·문서화</h3>
-        <p>콘텐츠 오류 확인, 수정사항 반영, 품질 검수, 운영결과 보고서 및 검수 결과 문서 작성 경험.</p>
-      </div>
-      <div class="cap">
-        <h3>홍보·콘텐츠 커뮤니케이션</h3>
-        <p>웹진, SNS, 홍보자료, 학생기자단, 학내 행사 운영을 통한 콘텐츠 기획·커뮤니케이션 경험.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
+</main>
 
-  <!-- 관련 문서 -->
-  <footer class="related">
-    <p>경력의 전체 흐름과 학력·자격은 이력서에서, 사업별 성과와 산출물 기록은 포트폴리오에서 확인할 수 있습니다.</p>
+<footer class="foot">
+  <div class="wrap">
+    <p class="lead">경력의 전체 흐름과 학력·자격은 이력서에서, 사업별 성과와 산출물 기록은 포트폴리오에서 확인할 수 있습니다.</p>
     <div class="rel-links">
       <a href="/resume/">이력서 보기</a>
       <a href="/portfolio/">포트폴리오 보기</a>
       <a class="mail" href="mailto:jekim.lead@gmail.com">이메일 보내기</a>
     </div>
     <p class="colophon">김재은 · AI·데이터 교육사업 PM · Career Description</p>
-  </footer>
+  </div>
+</footer>
 
-</main>
 </body>
 </html>
