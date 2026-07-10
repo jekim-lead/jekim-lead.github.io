@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이력서 · 김재은 | AI·데이터 교육사업 PM</title>
+<meta name="description" content="김재은 이력서 — AI·데이터 교육사업 PM. 총 경력 14년 7개월, 경력사항·대표 사업·업무도구·학력·자격.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF8;
+    --ink:#20242C;
+    --soft:#4A4F5A;
+    --mute:#7A7E88;
+    --line:#E6E3DC;
+    --accent:#2947B8;
+    --accent-deep:#1D338A;
+    --tint:#EFF2FA;
+    --maxw:880px;
+    --serif:"Noto Serif KR",serif;
+    --sans:"Noto Sans KR",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:15.5px;
+    line-height:1.75;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--accent);color:#fff;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+
+  /* ── 문서 내비게이션 ───────────────────────── */
+  .docnav{border-bottom:1px solid var(--line);background:var(--paper);}
+  .docnav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px;}
+  .docnav .who{font-family:var(--serif);font-weight:600;font-size:.95rem;letter-spacing:.02em;}
+  .docnav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;}
+  .docnav li a{
+    display:block;padding:7px 14px;font-size:.85rem;color:var(--mute);
+    border-radius:3px;transition:color .15s,background .15s;
+  }
+  .docnav li a:hover{color:var(--accent);background:var(--tint);}
+  .docnav li a[aria-current="page"]{color:var(--accent-deep);font-weight:700;background:var(--tint);}
+
+  /* ── 문서 표제부 ───────────────────────────── */
+  .head{padding:clamp(44px,8vw,76px) 0 clamp(28px,5vw,40px);}
+  .doc-kind{
+    display:inline-block;font-size:.8rem;letter-spacing:.34em;color:var(--accent);
+    font-weight:700;padding-left:.34em; /* 자간 보정 */
+    margin:0 0 18px;
+  }
+  .head h1{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(1.9rem,4.6vw,2.75rem);
+    letter-spacing:-.01em;line-height:1.3;margin:0 0 10px;
+  }
+  .head .title-line{font-size:clamp(1rem,2vw,1.15rem);color:var(--soft);margin:0;}
+  .head .title-line b{color:var(--ink);font-weight:700;}
+  .head .intro{margin:22px 0 0;max-width:62ch;color:var(--soft);}
+
+  /* ── 인사요약표 (시그니처) ─────────────────── */
+  .summary{
+    margin-top:clamp(30px,5vw,44px);
+    border-top:3px double var(--ink);
+    border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .summary .cell{padding:18px 18px 20px 0;border-right:1px solid var(--line);}
+  .summary .cell + .cell{padding-left:18px;}
+  .summary .cell:last-child{border-right:0;}
+  .summary dt{margin:0 0 8px;font-size:.76rem;color:var(--mute);letter-spacing:.06em;}
+  .summary dd{margin:0;font-family:var(--serif);font-weight:600;font-size:1.06rem;line-height:1.5;color:var(--ink);}
+  .summary dd small{display:block;font-family:var(--sans);font-weight:400;font-size:.78rem;color:var(--mute);margin-top:3px;}
+
+  /* ── 섹션 공통 ─────────────────────────────── */
+  section{padding:clamp(34px,6vw,56px) 0 0;}
+  .sec-title{
+    display:flex;align-items:baseline;gap:12px;
+    border-top:3px double var(--ink);
+    padding-top:16px;margin:0 0 6px;
+  }
+  .sec-title h2{
+    font-family:var(--serif);font-weight:700;font-size:1.22rem;
+    letter-spacing:.01em;margin:0;
+  }
+  .sec-title .en{font-size:.76rem;color:var(--mute);letter-spacing:.08em;}
+  .sec-note{margin:0 0 22px;font-size:.88rem;color:var(--mute);}
+  .sec-note .note-link{color:var(--accent);font-weight:500;border-bottom:1px solid transparent;transition:border-color .15s;}
+  .sec-note .note-link:hover{border-color:var(--accent);}
+
+  /* ── 경력사항 ─────────────────────────────── */
+  .career{list-style:none;margin:0;padding:0;}
+  .career li{
+    display:grid;grid-template-columns:190px 1fr;gap:26px;
+    padding:20px 0;border-bottom:1px solid var(--line);
+  }
+  .career .when{font-size:.86rem;color:var(--soft);line-height:1.7;padding-top:3px;}
+  .career .when .co{display:block;font-family:var(--serif);font-weight:600;font-size:1.02rem;color:var(--ink);margin-bottom:2px;}
+  .career .what .pos{margin:0 0 6px;font-size:.86rem;color:var(--accent-deep);font-weight:700;}
+  .career .what p{margin:0;color:var(--soft);font-size:.94rem;}
+  .career .what .more{
+    display:inline-block;margin-top:8px;font-size:.83rem;color:var(--accent);
+    border-bottom:1px solid transparent;transition:border-color .15s;
+  }
+  .career .what .more:hover{border-color:var(--accent);}
+
+  /* ── 대표 사업 ─────────────────────────────── */
+  .projects{list-style:none;margin:0;padding:0;counter-reset:pj;}
+  .projects li{border-bottom:1px solid var(--line);}
+  .projects a{
+    display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;
+    padding:15px 6px 15px 2px;transition:background .15s,padding-left .15s;
+  }
+  .projects a:hover{background:var(--tint);padding-left:12px;}
+  .projects .pj-name{font-weight:500;font-size:.96rem;line-height:1.55;}
+  .projects .pj-meta{display:block;font-size:.8rem;color:var(--mute);margin-top:2px;}
+  .projects .go{font-size:.82rem;color:var(--accent);white-space:nowrap;}
+
+  /* ── 업무도구 ─────────────────────────────── */
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .tool{background:var(--paper);padding:20px 20px 22px;}
+  .tool h3{margin:0 0 8px;font-family:var(--serif);font-size:1rem;font-weight:600;}
+  .tool p{margin:0 0 12px;font-size:.9rem;color:var(--soft);}
+  .tool .names{display:flex;flex-wrap:wrap;gap:6px;}
+  .tool .names span{
+    font-size:.78rem;color:var(--accent-deep);background:var(--tint);
+    padding:3px 10px;border-radius:2px;
+  }
+  .tools-extra{margin:14px 0 0;font-size:.85rem;color:var(--mute);}
+
+  /* ── 학력·자격 ────────────────────────────── */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,40px);}
+  .edu-grid h3{margin:0 0 12px;font-family:var(--serif);font-size:1rem;font-weight:600;}
+  .plain{list-style:none;margin:0;padding:0;}
+  .plain li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.94rem;}
+  .plain li small{display:block;color:var(--mute);font-size:.8rem;margin-top:2px;}
+
+  /* ── 관련 문서 ────────────────────────────── */
+  .related{margin-top:clamp(40px,7vw,64px);border-top:3px double var(--ink);padding:26px 0 60px;}
+  .related p{margin:0 0 16px;font-size:.92rem;color:var(--soft);}
+  .rel-links{display:flex;flex-wrap:wrap;gap:10px;}
+  .rel-links a{
+    display:inline-block;padding:11px 20px;font-size:.88rem;font-weight:500;
+    border:1px solid var(--accent);color:var(--accent-deep);border-radius:3px;
+    transition:background .15s,color .15s;
+  }
+  .rel-links a:hover{background:var(--accent);color:#fff;}
+  .rel-links a.mail{border-color:var(--line);color:var(--soft);}
+  .rel-links a.mail:hover{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .colophon{margin-top:34px;font-size:.78rem;color:var(--mute);}
+
+  /* ── 반응형 ───────────────────────────────── */
+  @media (max-width:720px){
+    .summary{grid-template-columns:1fr 1fr;}
+    .summary .cell{padding-left:0;padding-right:14px;}
+    .summary .cell + .cell{padding-left:14px;}
+    .summary .cell:nth-child(2){border-right:0;}
+    .summary .cell:nth-child(1),.summary .cell:nth-child(2){border-bottom:1px solid var(--line);}
+    .career li{grid-template-columns:1fr;gap:8px;padding:18px 0;}
+    .tools{grid-template-columns:1fr;}
+    .edu-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  /* ── 인쇄 ─────────────────────────────────── */
+  @media print{
+    .docnav,.related .rel-links{display:none;}
+    body{background:#fff;font-size:12.5px;}
+    .summary,.sec-title,.related{border-color:#000;}
+    a{color:#000;}
+    section{padding-top:26px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="docnav" aria-label="문서 이동">
+  <div class="wrap">
+    <span class="who">김재은</span>
+    <ul>
+      <li><a href="/resume/" aria-current="page">이력서</a></li>
+      <li><a href="/experience/">경력기술서</a></li>
+      <li><a href="/portfolio/">포트폴리오</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- 표제부 -->
+  <header class="head">
+    <span class="doc-kind">이 력 서</span>
+    <h1>김재은</h1>
+    <p class="title-line"><b>AI·데이터 교육사업 PM</b> · jekim.lead@gmail.com</p>
+    <p class="intro">원격 교육콘텐츠 제작·운영에서 출발해 대학 홍보·교육행정을 거쳐, 공공기관·기업 대상 AI·데이터 교육사업의 제안부터 결과보고까지 담당하는 교육사업 PM으로 일해왔습니다.</p>
+
+    <dl class="summary">
+      <div class="cell"><dt>총 경력</dt><dd>14년 7개월</dd></div>
+      <div class="cell"><dt>AI·데이터 교육사업</dt><dd>3년 10개월<small>B2G·B2B 기획·운영 PM</small></dd></div>
+      <div class="cell"><dt>최근 직책</dt><dd>수석연구원 · 팀장<small>㈜씨에스리 L&amp;D센터 교육사업팀</small></dd></div>
+      <div class="cell"><dt>연락처</dt><dd><a href="mailto:jekim.lead@gmail.com" style="font-size:.9rem;">jekim.lead@gmail.com</a></dd></div>
+    </dl>
+  </header>
+
+  <!-- 경력사항 -->
+  <section id="career">
+    <div class="sec-title"><h2>경력사항</h2><span class="en">Work Experience</span></div>
+    <p class="sec-note">회사별 실제 수행업무의 상세 기술은 <a class="note-link" href="/experience/">경력기술서 →</a> 에서 확인할 수 있습니다.</p>
+    <ul class="career">
+      <li>
+        <div class="when"><span class="co">㈜씨에스리</span>2022.04 – 2026.01</div>
+        <div class="what">
+          <p class="pos">L&amp;D센터 교육사업팀 · 수석연구원 / 팀장</p>
+          <p>공공기관·기업 대상 AI·데이터·DX 교육사업의 제안, 과정기획, 운영관리, 성과보고를 담당했습니다. 2023.03 교육사업 조직(TF) 발족부터 팀장으로 팀 구성·운영을 함께 수행했습니다.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when"><span class="co">서강대학교</span>2020.10 – 2022.04</div>
+        <div class="what">
+          <p class="pos">발전홍보팀 · 사원 / 팀원</p>
+          <p>대학 웹진·SNS 홍보 콘텐츠 기획·운영, 학생기자단 관리, 학내 행사 운영을 지원했습니다.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when"><span class="co">세종사이버대학교</span>2018.04 – 2020.04</div>
+        <div class="what">
+          <p class="pos">콘텐츠개발팀 · 사원 / 팀원</p>
+          <p>학기별 온라인 학습콘텐츠 제작과 유지보수 과정의 운영·검토, 리소스·문서 관리를 수행했습니다.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when"><span class="co">고려사이버대학교</span>2012.03 – 2014.03<br>2016.04 – 2018.04</div>
+        <div class="what">
+          <p class="pos">콘텐츠개발팀·연구개발팀 · 사원 / 팀원</p>
+          <p>원격 교육콘텐츠 신규 제작, 기개발 과정 보수·운영, 품질 검수와 운영결과 문서 작성을 담당했습니다.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when"><span class="co">서울디지털대학교</span>2009.03 – 2010.03<br>2014.03 – 2016.03</div>
+        <div class="what">
+          <p class="pos">디지털교육연구소·디자인개발팀 · 사원 / 팀원</p>
+          <p>원격 교육콘텐츠 제작과 기존 과정 운영, 강의 제작 리소스 관리, 품질 검수, SNS 콘텐츠 운영을 수행했습니다.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 대표 사업 -->
+  <section id="projects">
+    <div class="sec-title"><h2>대표 사업</h2><span class="en">Key Projects</span></div>
+    <p class="sec-note">사업별 성과 지표·주요 과업·산출물은 포트폴리오에 기록되어 있습니다. 항목을 선택하면 해당 사업으로 이동합니다.</p>
+    <ul class="projects">
+      <li><a href="/portfolio/#p01"><span class="pj-name">경찰청 빅데이터 교육 / AI·데이터 역량 강화교육<span class="pj-meta">경찰청 · 2023–2025 · 사업실무책임</span></span><span class="go">포트폴리오 →</span></a></li>
+      <li><a href="/portfolio/#p02"><span class="pj-name">AI·빅데이터 전문가 양성 과정 운영 위탁<span class="pj-meta">한국철도공사 · 2024–2025 · 사업실무책임</span></span><span class="go">포트폴리오 →</span></a></li>
+      <li><a href="/portfolio/#p03"><span class="pj-name">재정데이터 분석 교육 사업<span class="pj-meta">한국재정정보원 · 2024–2025 · 사업실무책임</span></span><span class="go">포트폴리오 →</span></a></li>
+      <li><a href="/portfolio/#p04"><span class="pj-name">환경데이터 리더 양성<span class="pj-meta">한국환경공단 · 2025 · 사업실무책임</span></span><span class="go">포트폴리오 →</span></a></li>
+      <li><a href="/portfolio/#p05"><span class="pj-name">IT 직무대상 역량강화를 위한 분석·설계 교육 프로그램<span class="pj-meta">KT · 2025 · 사업실무책임</span></span><span class="go">포트폴리오 →</span></a></li>
+      <li><a href="/portfolio/#p06"><span class="pj-name">도심 제조업 디지털 전환 촉진을 위한 AI 산업인력 역량 강화<span class="pj-meta">NIPA·서울테크노파크 · 2023–2024 · 참여기관 교육 실무 책임</span></span><span class="go">포트폴리오 →</span></a></li>
+      <li><a href="/portfolio/#p07"><span class="pj-name">교육산업 AI 융합 전문인력 역량 강화 사업<span class="pj-meta">NIPA·한국에듀테크산업협회 · 2022–2023 · 참여기관 교육 실무 책임</span></span><span class="go">포트폴리오 →</span></a></li>
+    </ul>
+  </section>
+
+  <!-- 업무도구 -->
+  <section id="tools">
+    <div class="sec-title"><h2>문서작성·업무도구 활용</h2><span class="en">Tool Skills</span></div>
+    <p class="sec-note">교육사업 PM 업무에 필요한 문서작성·실적관리·협업 도구를 사용하며, 생성형 AI를 문서화와 기획 보조에 활용합니다.</p>
+    <div class="tools">
+      <div class="tool">
+        <h3>문서작성·보고자료</h3>
+        <p>제안서, 운영계획서, 결과보고서, 회의자료, 교육 안내자료를 제출 대상에 맞게 작성·편집합니다.</p>
+        <div class="names"><span>Word</span><span>HWP</span><span>PowerPoint</span><span>Google Docs</span><span>Google Slides</span></div>
+      </div>
+      <div class="tool">
+        <h3>데이터·실적 관리</h3>
+        <p>교육생 명단, 출결, 수료, 만족도, 역량평가, 교육실적 데이터를 정리해 보고자료에 반영합니다.</p>
+        <div class="names"><span>Excel</span><span>Google Sheets</span></div>
+      </div>
+      <div class="tool">
+        <h3>협업·자료관리</h3>
+        <p>교육자료, 산출물, 일정, 공유문서를 관리하고 강사·교육생·기관 담당자와의 협업 흐름을 정리합니다.</p>
+        <div class="names"><span>Google Drive</span><span>Google Calendar</span><span>Google Workspace</span></div>
+      </div>
+      <div class="tool">
+        <h3>AI 기반 업무 보조</h3>
+        <p>공고문·RFP·결과보고서 구조화, 제안서 초안, 과정기획, 성과정리에 생성형 AI를 활용합니다.</p>
+        <div class="names"><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>NotebookLM</span></div>
+      </div>
+    </div>
+    <p class="tools-extra">기타 — GitHub Pages 기반 웹 포트폴리오 구성 · VS Code 기초 편집</p>
+  </section>
+
+  <!-- 학력·자격 -->
+  <section id="edu">
+    <div class="sec-title"><h2>학력·자격</h2><span class="en">Education &amp; Certifications</span></div>
+    <div class="edu-grid">
+      <div>
+        <h3>학력</h3>
+        <ul class="plain">
+          <li>경기대학교<small>시각디자인 전공 졸업</small></li>
+        </ul>
+      </div>
+      <div>
+        <h3>자격</h3>
+        <ul class="plain">
+          <li>데이터분석 준전문가 (ADsP)</li>
+          <li>평생교육사 2급</li>
+          <li>e러닝지도사 2급</li>
+          <li>컴퓨터그래픽스운용기능사</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 관련 문서 -->
+  <footer class="related">
+    <p>실제 수행업무의 상세 기술은 경력기술서에서, 사업별 성과와 산출물 기록은 포트폴리오에서 확인할 수 있습니다.</p>
+    <div class="rel-links">
+      <a href="/experience/">경력기술서 보기</a>
+      <a href="/portfolio/">포트폴리오 보기</a>
+      <a class="mail" href="mailto:jekim.lead@gmail.com">이메일 보내기</a>
+    </div>
+    <p class="colophon">김재은 · AI·데이터 교육사업 PM · Resume</p>
+  </footer>
+
+</main>
+</body>
+</html>
