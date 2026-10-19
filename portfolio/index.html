@@ -95,6 +95,9 @@
     line-height:1.7;
     margin:0;
   }
+  .hero .hero-dl{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;color:var(--muted);border-bottom:1px solid transparent;transition:color .18s,border-color .18s;}
+  .hero .hero-dl:hover{color:var(--accent);border-color:var(--accent);}
+  .hero .hero-dl svg{width:12px;height:12px;stroke:currentColor;flex:0 0 auto;opacity:.8;}
 
   /* ---------- stat strip ---------- */
   .stats{
@@ -460,7 +463,7 @@
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
 
   @media print{
-    .topbar,.foot .rel-links{display:none;}
+    .topbar,.foot .rel-links,.hero .hero-dl{display:none;}
     .reveal{opacity:1;transform:none;}
     .project{page-break-inside:avoid;}
     .band,.growth,.foot{background:#fff;color:#000;}
@@ -493,6 +496,7 @@
     <div class="wrap">
       <h1>AI·데이터 교육사업<br>기획·운영 포트폴리오</h1>
       <p class="lede">공공기관·기업 대상 AI·데이터 교육사업의 제안, 과정기획, 운영관리, 성과보고까지 수행한<br>교육사업 PM 경력 포트폴리오입니다.</p>
+      <a class="hero-dl" href="/files/portfolio_kimjaeeun.pdf" download="portfolio_kimjaeeun.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>문서로 저장 (PDF)</a>
     </div>
   </section>
 

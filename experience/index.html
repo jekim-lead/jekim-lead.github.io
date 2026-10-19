@@ -43,6 +43,9 @@
   .head .title-line .mail{color:var(--muted);font-family:var(--mono);font-size:.9rem;transition:color .18s;}
   .head .title-line .mail:hover{color:var(--accent);}
   .head .intro{margin:22px 0 0;max-width:66ch;color:var(--ink-soft);font-size:1rem;line-height:1.75;}
+  .head .head-dl{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;color:var(--muted);border-bottom:1px solid transparent;transition:color .18s,border-color .18s;}
+  .head .head-dl:hover{color:var(--accent);border-color:var(--accent);}
+  .head .head-dl svg{width:12px;height:12px;stroke:currentColor;flex:0 0 auto;opacity:.8;}
   .dsummary{margin-top:clamp(34px,5vw,52px);border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(3,1fr);}
   .dsummary .cell{padding:24px 0 6px;border-right:1px solid var(--line);}
   .dsummary .cell:last-child{border-right:0;padding-left:22px;}
@@ -108,7 +111,7 @@
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
   @media print{
-    .topbar,.foot .rel-links{display:none;}
+    .topbar,.foot .rel-links,.head .head-dl{display:none;}
     body{font-size:12.5px;}
     .head{padding:20px 0;}
     .foot{background:#fff;color:#000;}
@@ -138,10 +141,11 @@
 <main>
   <header class="head">
     <div class="wrap">
-      <p class="eyebrow">Career Description · 경력기술서</p>
+      <p class="eyebrow">Experience Detail · 경력기술서</p>
       <h1>김재은</h1>
       <p class="title-line"><b>AI·데이터 교육사업 PM</b> · <a class="mail" href="mailto:jekim.lead@gmail.com">jekim.lead@gmail.com</a></p>
       <p class="intro">회사별로 맡았던 역할과 실제 수행업무를 기술한 문서입니다. 경력의 전체 흐름은 이력서에서, 사업별 성과 기록은 포트폴리오에서 확인할 수 있습니다.</p>
+      <a class="head-dl" href="/files/career_kimjaeeun.pdf" download="career_kimjaeeun.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>문서로 저장 (PDF)</a>
       <dl class="dsummary">
         <div class="cell"><dt>총 경력</dt><dd>14년 7개월</dd></div>
         <div class="cell"><dt>AI·데이터 교육사업</dt><dd>3년 10개월<small>B2G·B2B 기획·운영 PM</small></dd></div>
@@ -159,7 +163,7 @@
 
   <div class="wrap">
     <section id="method">
-      <div class="sec-head"><h2>교육사업 수행 방식</h2><span class="en">Work Method</span></div>
+      <div class="sec-head"><h2>교육사업 수행 방식</h2><span class="en">How I Work</span></div>
       <p class="sec-note">공공기관·기업 AI·데이터 교육사업을 제안 검토부터 결과보고까지 관리하는 수행 프로세스입니다.</p>
       <div class="method">
         <div class="step">
@@ -182,8 +186,21 @@
     </section>
 
     <section id="detail">
-      <div class="sec-head"><h2>회사별 상세 경력기술</h2><span class="en">Work Experience Detail</span></div>
+      <div class="sec-head"><h2>회사별 상세 경력기술</h2><span class="en">Work History</span></div>
       <p class="sec-note">최근 경력부터 기재했습니다.</p>
+
+      <article class="firm">
+        <div class="firm-head"><h3>프리랜서</h3><span class="term">2026.02 – 현재</span></div>
+        <p class="pos">교육과정 기획·개발</p>
+        <p class="role"><b>AI 활용 교육과정 기획·개발.</b> 기관 발주 AI 활용 교육과정을 기획하고 교재와 실습자료를 개발해 운영했습니다. 서울시 청년취업사관학교 새싹(SeSAC) 은평캠퍼스 AI Agent 과정의 업무 자동화 과목과 서울시 패션제조지원센터 AI 패션 마케팅 과정을 맡았습니다.</p>
+        <p class="duty-label">주요 수행업무</p>
+        <ul class="duties">
+          <li>발주처 요구사항 분석 및 과정 목표·커리큘럼 구성</li>
+          <li>교재·워크북·강의 슬라이드 등 교육자료 개발</li>
+          <li>실습 환경 사전 구성 및 실습 단계 검증</li>
+          <li>교육 운영 및 강의 진행</li>
+        </ul>
+      </article>
 
       <article class="firm">
         <div class="firm-head"><h3>㈜씨에스리</h3><span class="term">2022.04 – 2026.01 · 3년 10개월</span></div>
@@ -273,7 +290,7 @@
     </section>
 
     <section id="caps">
-      <div class="sec-head"><h2>업무역량 요약</h2><span class="en">Capability Summary</span></div>
+      <div class="sec-head"><h2>업무역량 요약</h2><span class="en">Core Competencies</span></div>
       <p class="sec-note">전체 경력에서 확인되는 핵심 업무역량입니다.</p>
       <div class="caps">
         <div class="cap">
@@ -314,7 +331,7 @@
       <a class="mail" href="mailto:jekim.lead@gmail.com">이메일 보내기</a>
       <a class="pdf-btn" href="/files/career_kimjaeeun.pdf" download="career_kimjaeeun.pdf"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>문서로 저장 (PDF)</a>
     </div>
-    <p class="colophon">김재은 · AI·데이터 교육사업 PM · Career Description</p>
+    <p class="colophon">김재은 · AI·데이터 교육사업 PM · Experience Detail</p>
   </div>
 </footer>
 
